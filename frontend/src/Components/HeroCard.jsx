@@ -6,6 +6,7 @@ import AuroraBackground from "./ui/Hero";
 
  export function HeroCard() {
   return (
+    
     <AuroraBackground>
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
@@ -18,13 +19,13 @@ import AuroraBackground from "./ui/Hero";
         className="relative flex flex-col gap-4 items-center justify-center px-4  bg-transparent"
       >
         <div className="text-3xl md:text-7xl font-bold dark:text-white text-center bg-transparent">
-          Background lights are cool you know.
+        Buy carbon credits
         </div>
-        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 bg-transparent">
-          And this, is chemical burn.
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 bg-transparent text-center">
+        Offset your carbon footprint with ECO, the first carbon offset token on Ethereum
         </div>
         <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-          Debug now
+          Buy now
         </button>
       </motion.div>
     </AuroraBackground>
