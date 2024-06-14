@@ -1,36 +1,35 @@
 .calculator {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-   
-  .section {
-    margin-bottom: 20px;
-  }
-   
-  h1 {
-    text-align: center;
-    color: #082b09;
-    font-weight: bold;
-  }
-   
-  h2 {
-    color: #333;
-   
-    padding-bottom: 5px;
-  }
-   
-  .formula-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-  }
-   
-  .formula-box p {
-    margin: 5px 0;
-  }
-   
-  .total .formula-box {
-    background-color: #e0f7fa;
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #082b09;
+  font-weight: bold;
+}
+
+h2 {
+  color: #333;
+
+  padding-bottom: 5px;
+}
+
+.formula-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.formula-box p {
+  margin: 5px 0;
+}
+
+.total .formula-box {
+}

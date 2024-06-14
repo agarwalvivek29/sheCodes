@@ -5,7 +5,7 @@ import HeroCard from "./HeroCard"; // Ensure you have this component correctly d
 import { ThreeDCardDemo } from "./ThreeDCardDemo";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-
+import Grids from "./Grids";
 const Landing = () => {
   const featuredProjects = [
     // Add URLs for the featured project images
@@ -53,10 +53,10 @@ const Landing = () => {
 
         <div className="p-8">
           
-          <Cards cards={cardData} />
+          <Grids />
         </div>
         <h1 className="text-center text-5xl font-bold m-3">Get Started</h1>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center  gap-6 space-x-4">
       <ThreeDCardDemo className="max-w-xs" />
       <ThreeDCardDemo className="max-w-xs" />
       <ThreeDCardDemo className="max-w-xs" />

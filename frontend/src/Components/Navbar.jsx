@@ -9,7 +9,7 @@ const Navbar = () => {
         
         <Link to="/" className="flex gap-2" >
           <MdOutlineForest className="text-xl mt-1" />
-          <h1 className="font-bold text-xl">EcoChain</h1>
+          <h1 className="font-bold text-xl">EcoTokens</h1>
           </Link>
        
         <nav className="flex items-center gap-6 font-bold">
