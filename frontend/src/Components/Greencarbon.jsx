@@ -8,18 +8,7 @@ const Greencarbon = () => {
 
   return (
     <div>
-      <header className="flex gap-8 items-center p-4">
-        <div className="flex gap-2 items-center">
-          <MdOutlineForest className="mt-1" />
-          <h1 className="font-bold">EcoChain</h1>
-        </div>
-        <nav className="flex gap-6 font-bold ml-auto items-center">
-          <a href="/marketplace">Marketplace</a>
-          <a href="/explorer">Explorer</a>
-          <a href="/company">Company</a>
-          <a href="/learn">Learn</a>
-        </nav>
-      </header>
+     
       <main>
         <div className="p-6">
           <h1 className="text-3xl font-bold mb-4 text-center ">

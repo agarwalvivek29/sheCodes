@@ -45,7 +45,7 @@ const Landing = () => {
 
   return (
     <div>
-      <Navbar />
+      
 
       <main>
         <HeroCard />
@@ -63,7 +63,7 @@ const Landing = () => {
      
     </div>
     
-    <Footer  />
+
 
 
         {/* 

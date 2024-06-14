@@ -1,5 +1,5 @@
 
- 
+import {Link , NavLink} from 'react-router-dom'
  
 import React, { useState, useEffect, useRef } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
@@ -114,7 +114,7 @@ const Ccdv = () => {
           <p className="text-center mt-4">Total Annual Carbon Emissions</p>
           <p className="text-center text-green-600 font-bold">{totalEmissions.toFixed(2)} kg CO<sub>2</sub></p>
           <div className="text-center mt-4">
-            <a href="/CarbonFootprintCalculator" className="text-blue-500 underline">See how it's calculated</a>
+          <Link to="/learn2" className="flex items-center">See how it's calculated</Link>
           </div>
         </div>
       </div>
