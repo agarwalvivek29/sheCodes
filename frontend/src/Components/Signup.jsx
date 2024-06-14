@@ -42,7 +42,7 @@ export function Signup() {
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to EcoTokens
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+      <p className="text-neutral-600 text-md font-bold max-w-sm mt-2 dark:text-neutral-300">
         Fill in the Details
       </p>
 
@@ -50,7 +50,7 @@ export function Signup() {
         
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Tree Name</Label>
-          <Input id="email" placeholder="Timber" type="email" />
+          <Input id="email" placeholder="Eg (Timber)" type="email" />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
         <div className='flex items-center'>
