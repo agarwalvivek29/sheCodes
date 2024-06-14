@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className="flex items-center gap-6 font-bold">
 
           <NavLink 
-                                to="/explorer"
+                                to="/tokens"
                                     className={({isActive}) => //note that here class is written in backtisk '' and not in "" because we will change the classes in future according to our activity so to make it dynamic it is written in that way
                                         `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-[#3f4233]" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#3f4233] lg:p-0`
                                     }
@@ -39,7 +39,7 @@ const Navbar = () => {
                                     Company
                                 </NavLink>
                                 <NavLink 
-                                to="/learn2"
+                                to="/"
                                     className={({isActive}) => //note that here class is written in backtisk '' and not in "" because we will change the classes in future according to our activity so to make it dynamic it is written in that way
                                         `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-[#3f4233]" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#3f4233] lg:p-0`
                                     }
