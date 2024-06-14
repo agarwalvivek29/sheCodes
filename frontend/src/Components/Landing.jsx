@@ -1,8 +1,10 @@
 import React from "react";
-import { Card } from "./Cards";
+import Cards from "./Cards";
 import { MdOutlineForest } from "react-icons/md";
-import { HeroCard } from "./HeroCard";
-
+import HeroCard from "./HeroCard"; // Ensure you have this component correctly defined
+import { ThreeDCardDemo } from "./ThreeDCardDemo";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const Landing = () => {
   const featuredProjects = [
@@ -13,54 +15,58 @@ const Landing = () => {
     // Add URLs for the trending project images
   ];
 
-  const getStartedCards = [
+  const cardData = [
     {
-      title: "Buy ECO tokens",
-      description: "Buy and hold ECO, the first carbon offset token on Ethereum",
-      imageUrl: "url_for_buy_eco_tokens_image",
+      title: "Project 1",
+      imageUrl: "https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      message: "Message for Project 1"
     },
     {
-      title: "Wrap ECO",
-      description: "Convert ECO to wECO to use it in other DeFi protocols",
-      imageUrl: "url_for_wrap_eco_image",
+      title: "Project 2",
+      imageUrl: "https://images.pexels.com/photos/418831/pexels-photo-418831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      message: "Message for Project 2"
     },
     {
-      title: "Provide liquidity",
-      description: "Add ECO and ETH to Uniswap to earn fees and rewards",
-      imageUrl: "url_for_provide_liquidity_image",
+      title: "Project 3",
+      imageUrl: "https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      message: "Message for Project 3"
     },
     {
-      title: "Stake ECO",
-      description: "Lock up ECO to earn more ECO over time",
-      imageUrl: "url_for_stake_eco_image",
+      title: "Project 4",
+      imageUrl: "https://images.pexels.com/photos/1834399/pexels-photo-1834399.jpeg?auto=compress&cs=tinysrgb&w=600",
+      message: "Message for Project 4"
     },
+    {
+      title: "Project 5",
+      imageUrl: "https://images.pexels.com/photos/1061623/pexels-photo-1061623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      message: "Message for Project 5"
+    }
   ];
 
   return (
     <div>
-      <header className="header">
-      <div className="flex gap-2">
-          < MdOutlineForest className=" mt-1"/>
-          <h1 className="font-bold">EcoChain</h1>
-        </div>
-        <nav className=" flex gap-6 font-bold">
-          <a href="/marketplace">Marketplace</a>
-          <a href="/explorer">Explorer</a>
-          <a href="/company">Company</a>
-          <a href="/learn">Learn</a>
-          <button>Connect Wallet</button>
-        </nav>
-      </header>
+      <Navbar />
 
       <main>
-      <HeroCard />
-        <section className="hero">
-          <h2>Buy carbon credits</h2>
-          <p>Offset your carbon footprint with ECO, the first carbon offset token on Ethereum</p>
-          <input type="text" placeholder="Search for projects" />
-          <button>Search</button>
-        </section>
+        <HeroCard />
+        <h2 className="text-center text-5xl font-bold">Featured projects</h2>
 
+        <div className="p-8">
+          
+          <Cards cards={cardData} />
+        </div>
+        <h1 className="text-center text-5xl font-bold m-3">Get Started</h1>
+        <div className="flex justify-center space-x-4">
+      <ThreeDCardDemo className="max-w-xs" />
+      <ThreeDCardDemo className="max-w-xs" />
+      <ThreeDCardDemo className="max-w-xs" />
+     
+    </div>
+    
+    <Footer  />
+
+
+        {/* 
         <section className="featured-projects">
           <h3>Featured projects</h3>
           <div className="project-cards">
@@ -87,6 +93,7 @@ const Landing = () => {
             ))}
           </div>
         </section>
+        */}
       </main>
 
       <style jsx>{`
