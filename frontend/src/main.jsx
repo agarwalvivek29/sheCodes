@@ -8,6 +8,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Landing from './Components/Landing.jsx'
 import Greencarbon from './Components/Greencarbon.jsx'
 import Ccdv from './Components/ccdv.jsx'
+import Signup from './Components/Signup.jsx'
 import CarbonFootprintCalculator from './Components/CarbonFootprintCalculator.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +17,7 @@ const router = createBrowserRouter(
       <Route path='/explorer' element={<Greencarbon />} />
       <Route path='/learn' element={<Ccdv />}/>
       <Route path='/learn2' element={<CarbonFootprintCalculator />}/>
-
+<Route path='/learn3' element={<Signup />}/>
     </Route>
   )
  )
