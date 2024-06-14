@@ -1,36 +1,18 @@
-import React from "react";
+import React from 'react';
 
-export const Card = ({ title, description, imageUrl }) => {
+const Cards = ({ cards }) => {
   return (
-    <div className="card">
-      <img src={imageUrl} alt={title} />
-      <h4>{title}</h4>
-      <p>{description}</p>
-
-      <style jsx>{`
-        .card {
-          width: 200px;
-          padding: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          text-align: center;
-          background-color: #fff;
-        }
-
-        .card img {
-          width: 100%;
-          height: auto;
-          border-radius: 8px;
-        }
-
-        .card h4 {
-          margin: 0.5rem 0;
-        }
-
-        .card p {
-          color: #555;
-        }
-      `}</style>
+    <div className="flex gap-4">
+      {cards.map((card, index) => (
+        <div key={index} className="relative w-52 h-36 overflow-hidden rounded-lg">
+          <img src={card.imageUrl} alt={card.title} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500">
+            <span className="text-white text-center">{card.message}</span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
+
+export default Cards;
