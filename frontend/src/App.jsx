@@ -8,7 +8,7 @@ import Ccdv from './Components/ccdv'
 
 
 import "./App.css";
-import Landing from "./Components/Landing";
+
 import Greencarbon from "./Components/Greencarbon";
 
 function App() {
@@ -16,8 +16,7 @@ function App() {
     <>
 
      
-    <Ccdv />
-
+    
     </>
   );
 }
