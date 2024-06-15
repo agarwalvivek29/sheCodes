@@ -3,6 +3,12 @@
 ## Overview
 A Web3-based carbon credit marketplace leveraging the Ethereum blockchain, utilizing the MERN stack, Solidity and Web3.js, with MetaMask integration for enhanced accessibility and transparency.
 
+## Deployment
+- **Live Deployment**: https://she-codes-six.vercel.app/
+
+## Presentation
+- **Project Presentation**: https://drive.google.com/file/d/108S0uQI9gy17KkpTjPBVKf4S6wIIMQ8N/view?usp=drivesdk
+
 ## Features
 - **Blockchain Integration**
   - Ethereum-based for decentralization and security.
@@ -20,12 +26,6 @@ A Web3-based carbon credit marketplace leveraging the Ethereum blockchain, utili
 - **Market Accessibility**
   - User-friendly interface for all users.
   - Democratized access to carbon credits.
-
-## Deployment
-- **Live Deployment**: https://she-codes-six.vercel.app/
-
-## Presentation
-- **Project Presentation**: https://drive.google.com/file/d/108S0uQI9gy17KkpTjPBVKf4S6wIIMQ8N/view?usp=drivesdk
 
 ## Demo
 - **Demo Video**: 
