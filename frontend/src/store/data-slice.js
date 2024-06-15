@@ -11,7 +11,8 @@ const dataSlice = createSlice({
         thisContractAddress : null,
         wallet : null,
         tokens : null,
-        connectWalletRef : null
+        connectWalletRef : null,
+        walletBalance : [],
     },
     reducers: {
         setWalletAddress(state, action) {
@@ -32,6 +33,9 @@ const dataSlice = createSlice({
         setConnectWalletRef(state, action){
             state.connectWalletRef = action.payload;
         },
+        setWalletBalance(state, action){
+            state.walletBalance = action.payload;
+        }
     }
 });
 

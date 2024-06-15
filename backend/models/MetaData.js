@@ -1,6 +1,7 @@
+const { Schema } = require('mongoose');
 const mongoose = require('mongoose');
 
-const metaDataSchema = mongoose.Schema({
+const metaDataSchema = new Schema({
     image : {
         type : String,
         required : false

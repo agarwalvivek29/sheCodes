@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdOutlineForest } from 'react-icons/md';
-import {Link , NavLink} from 'react-router-dom';
+import {Link , NavLink, useNavigate} from 'react-router-dom';
 import { useRef } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -32,6 +32,7 @@ const Navbar = () => {
   };
 
   const connectWalletRef = useRef();
+  const navigate = useNavigate();
 
   return (
     <header className="bg-transparent text-black p-4 ">
@@ -78,7 +79,9 @@ const Navbar = () => {
                                 </NavLink>
           {!walletAddress && <button className="bg-transparent  text-black py-2 px-4 rounded" onClick={connectWallet} ref={connectWalletRef}>Connect Wallet</button>}
           {
-            walletAddress && <button className='whitespace-nowrap'>{walletAddress}</button>
+            walletAddress && <button className='whitespace-nowrap' onClick={()=>{
+              navigate('/myBalance');
+            }}>{walletAddress}</button>
           }
         </nav>
       </div>

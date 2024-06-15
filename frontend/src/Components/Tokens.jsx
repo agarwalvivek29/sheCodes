@@ -63,9 +63,7 @@ export default function Tokens(){
             </tbody>
         </table>}
         {
-            contracts.length === 0 && <button onClick={getContracts}>
-                getData
-            </button>
+            contracts.length === 0 && <div>Loading...</div>
         }
         </>
 

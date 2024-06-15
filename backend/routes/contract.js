@@ -1,11 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const Contract = require('../models/Contract');
+const MetaData = require('../models/MetaData');
 const { Web3 } = require('web3');
 const OneTimeSaleToken = require('../contracts/OneTimeSaleToken.json');
 require('dotenv').config();
 
 const infuraLink = process.env.INFURA_ENDPOINT;
+
+router.get('/get/:metaDataId',async (req,res)=>{
+    const metaDataId = req.params.metaDataId;
+    try{
+        const metaData = await MetaData.findById(metaDataId);
+        res.status(200).send({
+            success : true,
+            metaData
+        });
+    }
+    catch(err){
+        res.status(500).send({
+            success : false,
+            message : err.message
+        });
+    }
+});
 
 router.get('/getAll', async (req,res)=>{
     try{
