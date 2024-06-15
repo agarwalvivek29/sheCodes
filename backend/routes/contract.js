@@ -39,7 +39,7 @@ router.get('/getAll', async (req,res)=>{
                 payoutAddress,
                 availableTokens : availableTokens.toString(),
                 _id : contract._id,
-                weiSalePrice : salePrice
+                weiSalePrice : salePrice.toString()
             }
             populatedContractData.push(contractData);
         }
