@@ -1,6 +1,8 @@
 import React from "react";
 import { MdOutlineForest } from "react-icons/md";
 import LineChart from "./LineChart";
+import CarbonCreditCalculator from "./ui/CarbonCreditCalculator";
+
 const Greencarbon = () => {
   const totalCredits = 1000;
   const soldCredits = 150;
@@ -8,7 +10,6 @@ const Greencarbon = () => {
 
   return (
     <div>
-     
       <main>
         <div className="p-6">
           <h1 className="text-3xl font-bold mb-4 text-center ">
@@ -48,6 +49,7 @@ const Greencarbon = () => {
               atmosphere.
             </p>
           </div>
+          <CarbonCreditCalculator />
         </div>
       </main>
       <LineChart />
