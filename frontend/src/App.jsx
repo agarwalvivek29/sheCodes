@@ -16,7 +16,8 @@ import Signup from './Components/Signup.jsx'
 import ProjectRegistration from './Components/ProjectRegistration.jsx'
 import MyTokens from './Components/MyTokens.jsx'
 
-export const backendUrl = "http://localhost:8000";
+// export const backendUrl = "http://localhost:8000";
+export const backendUrl = "https://shecodes-1zv8.onrender.com";
 
 function App() {
   const contracts = useSelector((state)=>state.data.contracts);
