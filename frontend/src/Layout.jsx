@@ -5,11 +5,13 @@ import Navbar from './Components/Navbar'
 
 function Layout() {
   return (
-   <>
+   <div className='w-[100vw] h-[100vh] flex flex-col justify-between'>
    <Navbar />
-   <Outlet />
+   <div className=''>
+   <Outlet/>
+   </div>
    <Footer />
-   </>
+   </div>
   )
 }
 

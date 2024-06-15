@@ -50,6 +50,10 @@ const Greencarbon = () => {
     }
   },[]);
 
+  useEffect(()=>{
+    console.log(thisContract);
+  },[thisContract])
+
   // if(this)
 
   // // const totalCredits = 1000;
@@ -61,7 +65,7 @@ const Greencarbon = () => {
      
       {thisContract && <main>
         <div className="p-6">
-          <h1 className="text-3xl font-bold mb-4 text-center ">
+          <h1 className="text-3xl font-bold mb-14 text-center ">
             { contract.name } : { contract.symbol }
           </h1>
           <div className="mb-4">
@@ -86,17 +90,16 @@ const Greencarbon = () => {
           <div className="flex justify-around">
             <div>
                 <div className="mb-4">
-                  <h2 className="font-bold pl-[80px]">Goal</h2>
-                  <p className="pl-[110px]">
-                    {thisContract.metaData.description}
-                  </p>
+                <p className="font-bold pl-[80px]">
+                  Contract Address : {contract.address}
+                </p>
+                <p className="font-bold pl-[80px]">
+                  Seller Address : {contract.payoutAddress}
+                </p>
                 </div>
                 <div>
-                  <h2 className="font-bold pl-[80px]">Carbon Credits</h2>
-                  <p className="pl-[110px]">
-                    Each carbon credit token represents 1 ton of CO2 removed from the
-                    atmosphere.
-                  </p>
+                  <h2 className="font-bold pl-[80px]">Proof Image :</h2>
+                  <img src={contract.metaData.image} className="h-50 w-50" />
                 </div>
             </div>
             <div>

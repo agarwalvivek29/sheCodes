@@ -51,7 +51,7 @@ function App() {
         <Route path='/token/:id' element={<Greencarbon />} />
         <Route path='/tokens' element={<Tokens />}/>
         <Route path='/calculate' element={<Ccdv />}/>
-        <Route path='/educate' element={<CarbonFootprintCalculator />}/>
+        <Route path='/learn' element={<CarbonFootprintCalculator />}/>
         {/* <Route path='/register' element={<Signup />} /> */}
         <Route path='/register' element={<ProjectRegistration />} />
         <Route path='/myBalance' element={<MyTokens />} />

@@ -20,9 +20,9 @@ export const CarbonCreditCalculator = ({ price , contractAddress }) => {
   }
 
   return (
-    <div className="flex flex-col bg">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-80">
-        <div className="flex flex-col mb-4">
+    <div className="flex flex-col bg-white rounded-md">
+      <div className="bg-white p-6 rounded-lg w-80">
+        <div className="flex flex-col mb-4 rounded-md p-3">
           <label htmlFor="quantity" className="mb-2 font-semibold">
             Quantity
           </label>
@@ -34,14 +34,14 @@ export const CarbonCreditCalculator = ({ price , contractAddress }) => {
             className="p-2 border rounded"
           />
         </div>
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col mb-4 p-3 rounded-md">
           <div className="flex justify-between mb-2">
             <span className="font-semibold">Price per unit</span>
-            <div className="p-2 bg-gray-200 rounded">{price} ETH</div>
+            <div className="p-2 rounded">{price} ETH</div>
           </div>
           <div className="flex justify-between">
             <span className="font-semibold">Total</span>
-            <div className="p-2 bg-gray-200 rounded">{total} ETH</div>
+            <div className="p-2 rounded">{total} ETH</div>
           </div>
         </div>
         <button className="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onClick={buyTokens}>

@@ -5,6 +5,7 @@ import { useRef } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { dataActions } from '../store/data-slice';
+import metamask from '../assets/metamask.png';
 
 const Navbar = () => {
 
@@ -54,30 +55,30 @@ const Navbar = () => {
                                     Marketplace
                                 </NavLink>
            <NavLink 
-                                to="/learn"
+                                to="/calculate"
                                     className={({isActive}) => //note that here class is written in backtisk '' and not in "" because we will change the classes in future according to our activity so to make it dynamic it is written in that way
                                         `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-[#3f4233]" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#3f4233] lg:p-0`
                                     }
                                 > 
-                                    Explorer
+                                    Personal Carbon 👣
              </NavLink>
              <NavLink 
-                                to="/learn3"
+                                to="/register"
                                     className={({isActive}) => //note that here class is written in backtisk '' and not in "" because we will change the classes in future according to our activity so to make it dynamic it is written in that way
                                         `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-[#3f4233]" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#3f4233] lg:p-0`
                                     }
                                 > 
-                                    Company
+                                    List your 🍀 Credits
                                 </NavLink>
                                 <NavLink 
-                                to="/"
+                                to="/learn"
                                     className={({isActive}) => //note that here class is written in backtisk '' and not in "" because we will change the classes in future according to our activity so to make it dynamic it is written in that way
                                         `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-[#3f4233]" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#3f4233] lg:p-0`
                                     }
                                 > 
                                     Learn
                                 </NavLink>
-          {!walletAddress && <button className="bg-transparent  text-black py-2 px-4 rounded" onClick={connectWallet} ref={connectWalletRef}>Connect Wallet</button>}
+          {!walletAddress && <button className="bg-transparent  text-black py-2 px-4 rounded flex items-center gap-[2px] hover:bg-slate-300" onClick={connectWallet} ref={connectWalletRef}>Connect Wallet <img src={metamask} className='w-15'/></button>}
           {
             walletAddress && <button className='whitespace-nowrap' onClick={()=>{
               navigate('/myBalance');

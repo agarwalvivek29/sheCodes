@@ -30,8 +30,9 @@ export default function Tokens(){
 
     return (
         <>
+        <div className="text-2xl text-center font-semibold">Tokens MarketPlace</div>
         {contracts.length !== 0 && <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden my-4">
-            <thead className="bg-gray-100 text-gray-800 uppercase text-sm leading-normal">
+            <thead className="bg-slate-800 text-gray-800 uppercase text-sm leading-normal">
                 <tr>
                     <th className="py-3 px-6 text-left">Project / Institution</th>
                     <th className="py-3 px-6 text-left">Symbol</th>

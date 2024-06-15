@@ -45,7 +45,7 @@ export default function MyTokens(){
 
     return(
         <>
-        <h1>My Wallet Balances : ...</h1>
+        <div className="text-2xl text-center font-semibold">My Wallet Balance</div>
         {<div>
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden my-4">
             <thead className="bg-gray-100 text-gray-800 uppercase text-sm leading-normal">
