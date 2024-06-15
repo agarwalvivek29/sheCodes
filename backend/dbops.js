@@ -3,7 +3,9 @@ const MetaData = require("./models/MetaData");
 
 async function saveContract({ contractId }){
     try{
-        const contract = new Contract({ contractId });
+        const contract = new Contract({
+            address : contractId
+        });
         await contract.save();
         return contract;
     }

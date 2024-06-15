@@ -67,7 +67,7 @@ router.post('/tokenContract',async (req,res)=>{
         res.status(200).send({
             success : true,
             message : 'Contract deployed successfully',
-            data : savedContract
+            address : receipt.contractAddress
         });
     }
     catch(err){

@@ -1,24 +1,35 @@
 const mongoose = require('mongoose');
 
 const metaDataSchema = mongoose.Schema({
-    name : {
+    image : {
+        type : String,
+        required : false
+    },
+    desc : {
         type : String,
         required : true
     },
-    symbol : {
+    treeTypes : [{
+        type : String
+    }],
+    lattitude : {
         type : String,
         required : true
     },
-    initialSupply : {
+    longitude : {
+        type : String,
+        required : true
+    },
+    numberTrees : {
         type : Number,
         required : true
     },
-    salePrice : {
+    age : {
         type : Number,
         required : true
     },
-    payoutAddress : {
-        type : String,
+    circumference : {
+        type : Number,
         required : true
     }
 });

@@ -1,8 +1,38 @@
 import React from 'react';
 import { MdOutlineForest } from 'react-icons/md';
-import {Link , NavLink} from 'react-router-dom'
+import {Link , NavLink} from 'react-router-dom';
+import { useRef } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { dataActions } from '../store/data-slice';
 
 const Navbar = () => {
+
+  const dispatch = useDispatch();
+  const walletAddress = useSelector((state) => state.data.walletAddress);
+
+  const connectWallet = async () => {
+    console.log('Requesting account...');
+
+    if(window.ethereum) {
+      console.log('MetaMask detected');
+
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        dispatch(dataActions.setWalletAddress(accounts[0]));
+      } catch (error) {
+        console.log('Error connecting...');
+      }
+
+    } else {
+      alert('Meta Mask not detected');
+    }
+  };
+
+  const connectWalletRef = useRef();
+
   return (
     <header className="bg-transparent text-black p-4 ">
       <div className="container mx-auto flex justify-between items-center">
@@ -46,7 +76,10 @@ const Navbar = () => {
                                 > 
                                     Learn
                                 </NavLink>
-          <button className="bg-transparent  text-black py-2 px-4 rounded">Connect Wallet</button>
+          {!walletAddress && <button className="bg-transparent  text-black py-2 px-4 rounded" onClick={connectWallet} ref={connectWalletRef}>Connect Wallet</button>}
+          {
+            walletAddress && <button className='whitespace-nowrap'>{walletAddress}</button>
+          }
         </nav>
       </div>
     </header>

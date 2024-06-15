@@ -48,7 +48,7 @@ export default function Tokens(){
                             <td className="py-3 px-6 text-left whitespace-nowrap">{contract.name}</td>
                             <td className="py-3 px-6 text-left whitespace-nowrap">{contract.symbol}</td>
                             <td className="py-3 px-6 text-left whitespace-nowrap">{contract.initialSupply}</td>
-                            <td className="py-3 px-6 text-left whitespace-nowrap">{contract.salePrice}</td>
+                            <td className="py-3 px-6 text-left whitespace-nowrap">{parseFloat(contract.salePrice, 4)*84}$</td>
                             <td className="py-3 px-6 text-left whitespace-nowrap">{contract.availableTokens}</td>
                             <td className="py-3 px-6 text-center">
                                 <button onClick={()=>{

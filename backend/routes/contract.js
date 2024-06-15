@@ -26,17 +26,20 @@ router.get('/getAll', async (req,res)=>{
             const metaData = await contractInstance.methods.metaData().call();
             const payoutAddress = await contractInstance.methods.payoutAddress().call();
             const availableTokens = await contractInstance.methods.getUnsoldTokens().call();
+            
+            const ethSalePrice = web3.utils.fromWei(salePrice, 'ether');
 
             const contractData = {
                 address: contractAddress,
                 name,
                 symbol,
                 initialSupply : initialSupply.toString(),
-                salePrice : salePrice.toString(),
+                salePrice : ethSalePrice,
                 metaData,
                 payoutAddress,
                 availableTokens : availableTokens.toString(),
-                _id : contract._id
+                _id : contract._id,
+                weiSalePrice : salePrice
             }
             populatedContractData.push(contractData);
         }

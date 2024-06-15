@@ -12,6 +12,8 @@ import { useEffect } from 'react'
 import { dataActions } from './store/data-slice'
 
 import "./App.css";
+import Signup from './Components/Signup.jsx'
+import ProjectRegistration from './Components/ProjectRegistration.jsx'
 
 export const backendUrl = "http://localhost:8000";
 
@@ -48,6 +50,9 @@ function App() {
         <Route path='/tokens' element={<Tokens />}/>
         <Route path='/calculate' element={<Ccdv />}/>
         <Route path='/educate' element={<CarbonFootprintCalculator />}/>
+        {/* <Route path='/register' element={<Signup />} /> */}
+        <Route path='/register' element={<ProjectRegistration />} />
+
       </Route>
     )
    )  

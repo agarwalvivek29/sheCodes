@@ -11,6 +11,7 @@ const dataSlice = createSlice({
         thisContractAddress : null,
         wallet : null,
         tokens : null,
+        connectWalletRef : null
     },
     reducers: {
         setWalletAddress(state, action) {
@@ -24,7 +25,13 @@ const dataSlice = createSlice({
         },
         setThisContract(state, action){
             state.thisContract = action.payload;
-        }
+        },
+        setThisContractAddress(state, action){
+            state.thisContractAddress = action.payload;
+        },
+        setConnectWalletRef(state, action){
+            state.connectWalletRef = action.payload;
+        },
     }
 });
 
