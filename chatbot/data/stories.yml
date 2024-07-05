@@ -1,0 +1,92 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: positive
+  - action: utter_happy
+
+- story: end conversation
+  steps:
+  - intent: goodbye
+  - action: action_goodbye
+
+- story: carbon credits
+  steps:
+  - intent: what_are_carbon_credits
+  - action: utter_what_are_carbon_credits
+
+- story: tax benefits
+  steps:
+  - intent: tax_benefits
+  - action: utter_tax_benefits
+
+- story: small projects
+  steps:
+  - intent: small_projects
+  - action: utter_small_projects
+
+
+- story: carbon footprint for industry
+  steps:
+  - intent: calculate_carbon_footprint
+  - action: utter_for_whom
+  - intent: industry
+  - action: utter_ask_industry_type
+  - intent: provide_industry_type
+    entities:
+      - industry_type: manufacturing
+  - action: action_save_industry_type
+  - action: utter_ask_employees_count
+  - intent: provide_employees_count
+    entities:
+      - employees_count: 500
+  - action: action_save_employees_count
+  - action: utter_ask_energy
+  - intent: provide_energy
+    entities:
+      - energy: 20000
+  - action: action_save_energy
+  - action: utter_ask_transport_usage
+  - intent: provide_transport_usage
+    entities:
+      - transport_usage: 20
+  - action: action_save_transport_usage
+  - action: action_calculate_company_carbon_footprint
+  - action: utter_industry
+
+
+- story: carbon footprint for individual
+  steps:
+  - intent: calculate_carbon_footprint
+  - action: utter_for_whom
+  - intent: individual
+  - action: utter_ask_home_size
+  - intent: provide_home_size
+  - action: action_save_home_size
+  - action: utter_ask_transport_mode
+  - intent: provide_transport_mode
+    entities:
+      - transport_mode: car
+  - action: action_save_transport_mode
+  - action: utter_ask_food_habits
+  - intent: provide_food_habits
+    entities:
+      - food_habits: vegetarian
+  - action: action_save_food_habits
+  - action: utter_ask_energy_usage
+  - intent: provide_energy_usage
+    entities:
+      - energy_usage: 200
+  - action: action_save_energy_usage
+  - action: action_calculate_carbon_footprint
+  - action: utter_individual
+
+- story: how to buy credits
+  steps: 
+  - intent: how_to_buy_credits
+  - action: utter_how_to_buy_credits
+
