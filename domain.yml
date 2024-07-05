@@ -1,0 +1,169 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - what_are_carbon_credits
+  - calculate_carbon_footprint
+  - industry
+  - individual
+  - provide_home_size
+  - provide_transport_mode
+  - provide_food_habits
+  - provide_energy_usage
+  - provide_industry_type
+  - provide_employees_count
+  - provide_energy
+  - provide_transport_usage
+  - how_to_buy_credits
+  - small_projects
+  - tax_benefits
+  - positive
+  
+
+entities:
+  - home_size
+  - transport_mode
+  - food_habits
+  - energy_usage
+  - industry_type
+  - employees_count
+  - energy
+  - transport_usage
+
+slots:
+  home_size:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: home_size
+  transport_mode:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: transport_mode
+  food_habits:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: food_habits
+  energy_usage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: energy_usage
+  industry_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: industry_type
+  employees_count:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: employees_count
+  energy:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: energy
+  transport_usage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: transport_usage
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "How can I help you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_what_are_carbon_credits:
+  - text: "We Aim to build a Carbon Offsets and Green Credits Marketplace based on the Ethereum Blockchain, for complete transparency in the highly ambiguous market, where credits and offsets from various projects are listed for sale as NFT’s and Tokens. (1 Token = 1 Green Credit ). "
+
+  utter_for_whom:
+  - text: "Do you want to calculate for an individual or a company/industry?"
+
+  utter_industry:
+  - text: "Based on the information provided, your estimated carbon footprint is {carbon_footprint} tons of CO2 per year."
+
+  utter_individual:
+  - text: "Based on the information provided, your estimated carbon footprint is {carbon_footprint} tons of CO2 per year."
+
+  utter_ask_home_size:
+  - text: "What is the size of your home in square feet?"
+
+  utter_ask_transport_mode:
+  - text: "What is your primary mode of transport?"
+  
+  utter_ask_food_habits:
+  - text: "What are your food habits? Are you a vegetarian, vegan, or non-vegetarian?"
+
+  utter_ask_energy_usage:
+  - text: "How much electricity do you use per month in kWh?"
+
+  utter_ask_industry_type:
+  - text: "What is your industry type?"
+
+  utter_ask_employees_count:
+  - text: "How many employees does your company have?"
+
+  utter_ask_energy:
+  - text: "What is your monthly electricity usage in kWh?"
+
+  utter_ask_transport_usage:
+  - text: "How many vehicles does your company fleet have?"
+
+  utter_how_to_buy_credits:
+  - text: "Sure! Here's a Step-by-Step Guide:\n1.Visit the Marketplace:\n Go to our Carbon Offsets and Green Credits Marketplace \n\n2.Create an Account:\n Register by providing your details and connecting your Ethereum wallet. \n\n 3.Browse Projects: \n Explore listed projects that generate carbon credits. \n\n 4.Select Credits: \n Choose the amount of carbon credits (tokens) you wish to purchase. \n\n 5.Make a Purchase: \n Complete the transaction using your Ethereum wallet. The credits will be transferred to your wallet as tokens. "
+
+  utter_small_projects:
+  - text: "Yes, our platform supports fractional ownership, allowing even small-scale projects and individuals to buy, sell, and benefit from carbon credits."
+
+  utter_tax_benefits:
+  - text: "Yes, redeeming carbon credits can help you save on taxes related to ESG compliance and avail CSR benefits."
+
+
+actions:
+  - action_calculate_carbon_footprint
+  - action_save_home_size
+  - action_save_transport_mode
+  - action_save_food_habits
+  - action_save_energy_usage
+  - action_save_industry_type
+  - action_save_employees_count
+  - action_save_energy
+  - action_save_transport_usage
+  - action_calculate_company_carbon_footprint
+  - action_goodbye
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

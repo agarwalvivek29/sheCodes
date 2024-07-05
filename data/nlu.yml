@@ -1,0 +1,153 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - good bye
+    - see you later
+    - bye
+    - goodbye
+    - bye bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: positive
+  examples: |
+    - good!
+    - amazing
+    - great
+    - I am doing good
+ 
+- intent: small_projects
+  examples: |
+    - Can small projects or individuals participate?
+    - is this applicable to individuals?
+    - can individuals participate?
+    - is this applicable for small projects?
+
+- intent: tax_benefits
+  examples: |
+    - Are there any tax benefits?
+    - Can i get any tax benefits?
+    - tax benefits.
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: what_are_carbon_credits
+  examples: | 
+    - what are carbon credits?
+    - explain carbon credits.
+    - carbon credits.
+    - how do carbon credits work?
+    - what is the purpose of carbon credits?
+    - tell me about carbon credits.
+
+- intent: how_to_buy_credits
+  examples: |
+    - how to buy carbon credits?
+    - explain the procedure to buy carbon credits
+    - how can I buy carbon credits?
+    - steps to buy carbon credits.
+    - buying carbon credits.
+
+- intent: calculate_carbon_footprint
+  examples: |
+    - I want to calculate my carbon footprint.
+    - I want to calculate my company's carbon footprint.
+    - calculate carbon emission.
+    - I want to calculate my company's carbon emission.
+    - I want to calculate my carbon emission. 
+    - Help me calculate my carbon footprint.
+  
+- intent: industry
+  examples: |
+    - company
+    - industry
+    - for my company 
+
+- intent: individual
+  examples: |
+    - individual
+    - for myself
+    - a person
+
+- intent: provide_home_size
+  examples: |
+    - My home size is {home_size} square feet
+    - I live in a {home_size} square feet house
+
+- intent: provide_transport_mode
+  examples: |
+    - I drive a [car](transport_mode)
+    - I use [public transport](transport_mode)
+    - I [cycle](transport_mode)
+
+- intent: provide_food_habits
+  examples: |
+    - I am a [vegetarian](food_habits)
+    - I eat [meat](food_habits) daily
+    - I have a [balanced diet](food_habits)
+
+- intent: provide_energy
+  examples: |
+    - I use [200](energy_usage) kWh of electricity per month
+    - My monthly electricity usage is [300](energy_usage) kWh
+
+- intent: provide_industry_type
+  examples: |
+    - My industry is [manufacturing](industry_type)
+    - I work in the [tech](industry_type) industry
+
+- intent: provide_employees_count
+  examples: |
+    - We have [500](employees_count) employees
+    - Our company has [1000](employees_count) employees
+
+- intent: provide_energy
+  examples: |
+    - Our monthly electricity usage is [20000](energy) kWh
+    - We consume [50000](energy) kWh of electricity per month
+
+- intent: provide_transport_usage
+  examples: |
+    - We have [20](transport_usage) company vehicles
+    - Our fleet consists of [50](transport_usage) vehicles
+
+
+
+
+
+
+

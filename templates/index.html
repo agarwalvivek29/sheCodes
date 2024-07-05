@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .chat-container {
+        height: 550px;
+        max-width: 400px;
+        display: none; /* Initially hide the chat container */
+      }
+
+      .chat-messages {
+        height: calc(100% - 3rem);
+        overflow-y: scroll;
+        padding: 1rem;
+      }
+
+      .chat-input {
+        height: 3rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col items-center justify-between min-h-screen relative"
+  >
+    <h1 class="text-center font-bold text-4xl mt-4">Welcome To Chatbot!</h1>
+
+    <div
+      id="chatContainer"
+      class="chat-container bg-transparent shadow-lg rounded-lg flex flex-col absolute bottom-20 pt-20 right-4"
+    >
+      <div
+        class="chat-header bg-blue-500 text-white p-4 rounded-t-lg flex items-center justify-between"
+      >
+        <h2 class="font-bold text-lg">Chatbot</h2>
+        <button onclick="closeChatbot()" class="text-white">✖</button>
+      </div>
+      <div class="chat-messages flex-1 overflow-y-auto p-4">
+        <div class="message user mb-4 flex justify-end">
+          <div class="bg-blue-500 text-white p-2 rounded-lg max-w-xs">
+            Hello! How can I help you today?
+          </div>
+        </div>
+        <div class="message bot mb-4 flex justify-start">
+          <div class="bg-gray-300 p-2 rounded-lg max-w-xs">
+            Hi! I need some information about your services.
+          </div>
+        </div>
+      </div>
+      <div class="chat-input bg-gray-200 p-4 flex items-center justify-between">
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Type a message..."
+          class="w-full p-2 border border-gray-300 rounded-lg"
+        />
+        <button
+          onclick="sendMessage()"
+          class="ml-2 bg-blue-500 text-white p-2 rounded-lg"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+
+    <button
+      id="toggleButton"
+      onclick="toggleChatbot()"
+      class="bg-blue-500 text-white p-2 rounded-lg fixed bottom-4 right-4"
+    >
+      Chatbot
+    </button>
+
+    <script>
+      function toggleChatbot() {
+        const chatContainer = document.getElementById("chatContainer");
+        const toggleButton = document.getElementById("toggleButton");
+
+        if (
+          chatContainer.style.display === "none" ||
+          chatContainer.style.display === ""
+        ) {
+          chatContainer.style.display = "flex";
+          toggleButton.style.display = "none";
+        } else {
+          chatContainer.style.display = "none";
+          toggleButton.style.display = "block";
+        }
+      }
+
+      function closeChatbot() {
+        const chatContainer = document.getElementById("chatContainer");
+        const toggleButton = document.getElementById("toggleButton");
+        chatContainer.style.display = "none";
+        toggleButton.style.display = "block";
+      }
+
+      function sendMessage() {
+        const userInput = document.getElementById("userInput").value;
+        const chatMessages = document.querySelector(".chat-messages");
+
+        // Display user's message
+        const userMessage = document.createElement("div");
+        userMessage.classList.add(
+          "message",
+          "user",
+          "mb-4",
+          "flex",
+          "justify-end"
+        );
+        userMessage.innerHTML = <div class="bg-blue-500 text-white p-2 rounded-lg max-w-xs">${userInput}</div>;
+        chatMessages.appendChild(userMessage);
+
+        // Simulate bot response (replace this part with actual API call)
+        const botResponse = document.createElement("div");
+        botResponse.classList.add(
+          "message",
+          "bot",
+          "mb-4",
+          "flex",
+          "justify-start"
+        );
+        botResponse.innerHTML = <div class="bg-gray-300 p-2 rounded-lg max-w-xs">This is a response from the bot.</div>;
+        setTimeout(() => chatMessages.appendChild(botResponse), 1000);
+
+        // Clear the input
+        document.getElementById("userInput").value = "";
+
+        // Scroll to the bottom of the chat
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      $(document).ready(function() {
+            $('#send_button').click(function() {
+                var message = $('#user_message').val();
+                if (message) {
+                    $.ajax({
+                        url: 'http://127.0.0.1:5000/send_message',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            message: message,
+                            sender_id: 'user1'
+                        }),
+                        success: function(response) {
+                            $('#response').html('<p>Rasa says: ' + response[0].text + '</p>');
+                        },
+                        error: function(error) {
+                            $('#response').html('<p>An error occurred: ' + error.responseText + '</p>');
+                        }
+                    });
+                } else {
+                    alert('Please enter a message');
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
